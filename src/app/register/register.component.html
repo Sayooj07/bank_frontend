@@ -1,0 +1,117 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand text-primary" href="#"><i class="fa-solid fa-house">Federal Bank</i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <li class="nav-item"> </li> </ul>
+     </div>
+  </div>
+</nav>
+<section>
+<div class="content">
+ <img width="700px"
+      src="https://thumbs.dreamstime.com/b/online-banking-web-banner-concept-making-financial-operations-such-as-payment-investment-using-digital-device-money-148131268.jpg"
+      alt="">
+     <form [formGroup]="registerForm" class="border p-3 rounded-3" (ngSubmit)="register()">
+      <div class="row g-0">
+        <div class="col text-center p-2 mb-3 bg-light">
+          <span class="fs-3">Register</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col mb-3">
+          <label for="account-number" class="form-label">Acc No</label>
+          <input name="acno" formControlName="acno" type="text" class="form-control" id="account-number">
+        </div>
+<!--account number validation  -->
+
+        <div *ngIf="this.registerForm.get('acno')?.errors&&this.registerForm.get('acno')?.touched"
+          class="mt-2 text-danger">
+
+          Invalid Account Number
+
+        </div>
+
+
+      </div>
+      <div class="row">
+        <div class="col mb-3">
+          <label for="account-number" class="form-label">Username</label>
+          <input name="username" formControlName="username" type="text" class="form-control" id="account-number">
+        </div>
+
+      </div>
+
+      <!-- username validation -->
+
+      <div *ngIf="this.registerForm.get('username')?.errors&&this.registerForm.get('username')?.touched"
+        class="mt-2 text-danger">
+
+        Invalid Username
+
+      </div>
+
+      <div class="row">
+
+      </div>
+      <div class="">
+
+        <div class="col ps-3 mb-3">
+
+
+
+        </div>
+      </div>
+
+      <div class="col mb-3">
+        <label for="pswd" class="form-label"> Password</label>
+        <input name="password" formControlName="password" type="password" class="form-control" id="pswd">
+
+
+      </div>
+
+      <!--password  validation -->
+      <div *ngIf="this.registerForm.get('password')?.errors&&this.registerForm.get('password')?.touched"
+        class="mt-2 text-danger">
+
+        Invalid Password
+
+      </div>
+
+
+      <div class="row">
+        <div class="col-6 offset-3">
+          <div class="d-grid">
+            <button type="submit" class="btn btn-success">Submit</button>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="text-center">Already A User? <a routerLink="/federalbank/login">LOGIN</a></div>
+    </form>
+
+
+  </div>
+
+
+</section>
+
+
+
+
+<footer>
+
+  <p class="text-center m-3 bg-info">
+    <br>
+    &copy; All Rights Reserved &reg; Federal Bank
+    <br> <br>
+  </p>
+
+</footer>

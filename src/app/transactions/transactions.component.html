@@ -1,0 +1,114 @@
+<nav class="navbar bg-primary">
+
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1 text-white">Federal Bank</span>
+
+      
+
+   
+    </div>
+
+</nav>
+
+
+<div class="container-fluid">
+    
+    
+    
+    <h2 class="text-success m-5">Mini Statement</h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At tenetur assumenda quia temporibus labore sapiente ullam ipsam illum atque quae, possimus cupiditate ab excepturi iure. Quidem velit vero excepturi facere!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At tenetur assumenda quia temporibus labore sapiente ullam ipsam illum atque quae, possimus cupiditate ab excepturi iure. Quidem velit vero excepturi facere!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At tenetur assumenda quia temporibus labore sapiente ullam ipsam illum atque quae, possimus cupiditate ab excepturi iure. Quidem velit vero excepturi facere!
+    </p>
+
+
+    <div class="container-fluid border p-3 mt-5">
+
+
+        <div class="row">
+
+
+            <div class="col-lg-3">
+
+                <h3>All Transactions</h3>
+
+                
+
+            <div class="col-lg-8">
+
+
+                <div class="d-flex align-items-center">
+<label for="">Search</label>
+
+<input  name="searchKey" [(ngModel)]="searchKey" type="text">
+
+                </div>
+            </div>
+
+            <div class="col-lg-3"></div>
+
+
+
+            <div class="col-lg-3">
+
+
+<input (click)="generatePdf()" type="button" value="Export" class="btn btn-success">
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <table  class="table border mt-3 text-center">
+
+
+        <thead>
+
+            <tr>
+
+                <th> No</th>
+                <th>Transaction Type</th>
+                <th>From Account</th>
+                <th>To Account</th>
+                <th>Amount</th>
+            </tr>
+
+        </thead>
+
+
+        <tbody>
+
+
+            <tr *ngFor="let transaction of transactions | filterTransaction:searchKey: 'transaction_type'; let i=index">
+
+                <th>{{i+1}}</th>
+                <th>{{transaction.transaction_type}}</th>
+                <th>{{transaction.fromAcno}}</th>
+                <th>{{transaction.toAcno}}</th>
+                <th>{{transaction.amount}}</th>
+            </tr>
+
+
+
+        </tbody>
+
+
+
+
+
+
+    </table>
+
+
+            </div>
+
+
+
+
+</div>
+
+
+

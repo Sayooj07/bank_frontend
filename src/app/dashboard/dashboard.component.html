@@ -1,0 +1,343 @@
+<nav class="navbar bg-primary">
+
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1 text-white">Federal Bank</span>
+
+          
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-gear text-white">Settings</i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a (click)="logout()" class="dropdown-item" >Logout</a></li>
+              <li>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteacc">
+                 Delete Account
+                </button>
+              </li>
+            </ul>
+          </li>
+        </div>
+
+  </nav>
+
+
+  
+  <section>
+
+  
+    <div class="content">
+  
+      <img width="700px"
+        src="https://thumbs.dreamstime.com/b/online-banking-web-banner-concept-making-financial-operations-such-as-payment-investment-using-digital-device-money-148131268.jpg"
+        alt="">
+  
+  
+      <div class="700px">
+        <h2 class="text-primary">Welcome <span class="">{{user}}</span></h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam explicabo optio consequuntur, libero eius nobis
+          maxime facilis fugit tempora in, mollitia maiores nisi, neque pariatur quia rerum autem rem eligendi! Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Maiores deleniti nesciunt eligendi quidem doloremque? Vitae
+          voluptatibus quam quo voluptatem incidunt delectus voluptas consequuntur! Odit necessitatibus laboriosam ducimus
+          a explicabo asperiores.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores deleniti nesciunt eligendi quidem doloremque?
+          Vitae voluptatibus quam quo voluptatem incidunt delectus voluptas consequuntur! Odit necessitatibus laboriosam
+          ducimus a explicabo asperiores.
+        </p>
+  
+        <p  class="collapse" id="collapseExample">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consectetur debitis adipisci ab atque, ducimus
+          voluptas consequatur ullam quis quaerat, possimus reiciendis nisi? Pariatur, quasi beatae quas earum cupiditate
+          odit.</p>
+  
+  
+        <button (click)="collapse()" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+          class="btn btn-success ">Read<span *ngIf="isCollapse">More</span> 
+          <span *ngIf="!isCollapse">Less</span>
+        </button>
+  
+  
+      </div>
+  
+    </div>
+  
+  
+  </section>
+
+
+
+
+<div>
+
+    <h2 class="text-primary text-center m-5">Our Banking Services</h2>
+
+</div>
+
+
+<div class="row m-5">
+
+    <!-- balance enquiry -->
+
+    <div class="col-lg-4 d-flex justify-content-center">
+
+
+        <div (click)="getBalance()"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"  class="card btn" style="width: 18rem;">
+
+            <div class="image">
+
+<img src="https://tse2.mm.bing.net/th?id=OIP.bYdCpmOkeqHqPudrH6E93wAAAA&pid=Api&P=0&h=180" alt="" class="card-img-top">
+
+
+            </div>
+
+
+            <div class="card-body">
+
+                <h5 class="card-title fw-bolder">Balance  Enquiry</h5>
+
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+    <!--fund transfer  -->
+
+    
+    <div class="col-lg-4 d-flex justify-content-center">
+
+
+        <div  data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="card btn" style="width: 18rem;">
+
+            <div class="image">
+
+<img src="https://tse2.mm.bing.net/th?id=OIP.swwe5JFbyudZ_1aSs5ntTwHaEy&pid=Api&P=0&h=180" alt="" class="card-img-top">
+
+
+            </div>
+
+
+            <div class="card-body">
+
+                <h5 class="card-title fw-bolder">Fund Transfer</h5>
+
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+<!--Mini Statement  -->
+
+
+<div routerLink="/user/transactions"  class="col-lg-4 d-flex justify-content-center">
+
+
+    <div class="card btn" style="width: 18rem;">
+
+        <div class="image">
+
+<img src="https://c8.alamy.com/comp/2BXHHMP/bank-statement-showing-interests-and-balances-for-the-year-2BXHHMP.jpg" alt="" class="card-img-top">
+
+
+        </div>
+
+
+        <div class="card-body">
+
+            <h5 class="card-title fw-bolder">Mini Statement</h5>
+
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<footer>
+
+    <p class="text-center">
+            &copy; All Rights Reserved &reg; Federal Bank
+        
+    </p>
+    
+      </footer>
+
+
+<!-- balance offcanvas -->
+  
+
+<div *ngIf="showOffcanvas" class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Balance Enquiry</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+
+    <h4>Hello {{user}}</h4>
+    <p>Your Current Balance is : <span class="fw-bold fs-1 text-danger">{{balance}}</span></p>
+      </div>
+    
+    </div>
+  </div>
+
+
+
+  <div>
+
+
+
+
+  </div>
+
+
+  <!-- fund transfer modal -->
+
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Fund Transfer Form</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <form [formGroup]="transferForm">
+          <div class="form-floating mb-3">
+            <input type="email" formControlName="creditAcno" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Credit Account</label>
+          </div>
+
+          <!-- account validation -->
+          <div *ngIf="this.transferForm.get('creditAcno')?.errors&&this.transferForm.get('creditAcno')?.touched"
+          class="mt-2 text-danger">
+
+          Invalid Account Number
+
+        </div>
+
+
+          <div class="form-floating">
+            <input  formControlName="creditAmount" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Credit Amount</label>
+          </div>
+
+
+          <!-- amount validation -->
+
+
+          <div *ngIf="this.transferForm.get('creditAmount')?.errors&&this.transferForm.get('creditAmount')?.touched"
+          class="mt-2 text-danger">
+
+          Invalid Amount
+
+        </div>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" formControlName="profilePswd" placeholder="name@example.com">
+            <label for="floatingInput">Password</label>
+          </div>
+
+          <!-- password validation -->
+
+          <div *ngIf="this.transferForm.get('profilePswd')?.errors&&this.transferForm.get('profilePswd')?.touched"
+          class="mt-2 text-danger">
+
+          Invalid Password
+
+        </div>
+
+
+
+       </form>
+
+       <div *ngIf="transferSuccessMsg" class="fs-4 text-success">
+
+
+
+{{transferSuccessMsg}}
+
+
+       </div>
+
+<div  class="fs-4 text-danger"  >
+
+
+  {{transferFailMsg}}
+
+
+</div>
+
+
+
+      </div>
+      <div class="modal-footer">
+
+        <button (click)="cancelTransfer()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button (click)="transfer()" [disabled]="!handleTransfer"  type="button" class="btn btn-primary">Transfer</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+
+<!-- delete acc modal  -->
+
+<div class="modal fade" id="deleteacc" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      Are you sure, do you want to delete your account?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button data-bs-dismiss="modal" (click)="deleteMyAcno()" type="button" class="btn btn-primary">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
+
+
+

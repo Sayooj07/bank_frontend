@@ -1,0 +1,25 @@
+li{
+
+    list-style: none;
+
+
+}
+
+li a{
+
+    text-decoration: none;
+
+    margin-left: 10px;
+
+    font-weight: 500;
+
+}
+
+.content{
+
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+
+}
+

@@ -1,0 +1,24 @@
+
+
+
+   -Features
+      -NoSql db
+      -document oriented
+      -json data
+      -Easily Flexible
+  -show dbs:
+  -use database-name
+  -insert data
+     -insertOne(object)
+     -insertMany(array)
+  -read data
+     -find(): to get all data
+     -findOne()
+       -limit()
+       -skip()
+       _sort()
+ -complex queries , use $
+    -$eq/ $neq
+    -$gt / $gte /$lt / $lte
+    -$exists
+    -
